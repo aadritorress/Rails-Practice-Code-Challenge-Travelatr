@@ -1,0 +1,17 @@
+. Users should be able to see a destination profile page. On this page, a user should see:
+	- The most recent 5 posts written about this destination
+	- A link to a featured post (this destination's post with the most likes)
+	- The average age of all unique bloggers who have written about this destination.
+
+<h1> <%= @destination.name %>, <%= @destination.country %> </h1>
+<h3> Recent Posts </h3>
+<ul>
+    <% @destination.recent_posts.each do |post| %>
+        <li> <%= link_to post.title, post %> </li>
+    <% end %>
+</ul> 
+<h3> Featured Posts </h3>
+
+ <%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %> 
+
+<h3> average age of bloggers :  <%= @destination.blogger_age_avg %> 

@@ -1,0 +1,8 @@
+<h1> <%= @post.title %> </h1>
+<h1> <%= @post.content %> </h1>
+<h1> <%= @post.likes %> </h1>
+
+
+<h1> <%= link_to @post.blogger.name, blogger_path(@post.blogger) %> </h1>
+<h1> <%= link_to @post.destination.name_country, destination_path(@post.destination) %> </h1>
+
